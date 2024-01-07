@@ -8,8 +8,7 @@ _**A JavaFX task manager application**_
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Documentation](#documentation)
 
 ## Introduction
 
