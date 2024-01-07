@@ -90,4 +90,22 @@ Now, your TaskManagerApp should be up and running in IntelliJ IDEA. If you encou
 
 ## Documentation
 
-_**Class diagram**_
+_**Class Diagram**_
+![Class Diagram](TaskManagerApp.jpg)
+
+_**Database Project**_
+![Database Project](https://github.com/dariaungureanu/TaskManagerApp/assets/131611604/3d7d4cf2-e57d-438c-ab0b-bce23e8a4b4e)
+
+_**Interface View**_
+
+-_Log In Page_
+![image](https://github.com/dariaungureanu/TaskManagerApp/assets/131611604/92469857-2d7e-4964-bd73-87c76a387d85)
+
+-_Create Project Page_
+![image](https://github.com/dariaungureanu/TaskManagerApp/assets/131611604/14c3faed-3465-42b7-93e2-3454528cb65f)
+
+-_Create Task Page_
+![image](https://github.com/dariaungureanu/TaskManagerApp/assets/131611604/99550af6-5eb9-4ef6-a852-ddefc63c6a46)
+
+-_View Tasks Page_
+![image](https://github.com/dariaungureanu/TaskManagerApp/assets/131611604/cec56ed7-ec39-4d39-8b70-d5d159993122)
