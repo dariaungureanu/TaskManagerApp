@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="507.0" prefWidth="568.0" style="-fx-background-color: #D1F2EB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanagerapp.controllers.UpdateTasksController">
+    <children>
+        <AnchorPane prefHeight="429.0" prefWidth="568.0">
+            <children>
+                <Label alignment="CENTER" layoutX="35.0" layoutY="12.0" prefHeight="38.0" prefWidth="198.0" text="Update a task">
+                    <font>
+                        <Font name="Berlin Sans FB" size="19.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <effect>
+                        <Glow />
+                    </effect>
+                    <image>
+                        <Image url="@../../../../java/com/example/taskmanagerapp/images/taskmanager.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="57.0" layoutY="192.0" opacity="0.75" prefHeight="18.0" prefWidth="95.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="37.0" layoutY="140.0" opacity="0.97" prefHeight="22.0" prefWidth="88.0" text="New Title">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="title" layoutX="189.0" layoutY="140.0" prefHeight="22.0" prefWidth="267.0" promptText="Task 1" style="-fx-background-color: #DAF7A6;">
+                    <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </TextField>
+                <Label layoutX="37.0" layoutY="181.0" opacity="0.97" prefHeight="22.0" prefWidth="112.0" text="New Description">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="description" layoutX="189.0" layoutY="181.0" prefHeight="22.0" prefWidth="267.0" promptText="Write smth about your task..." style="-fx-background-color: #DAF7A6;">
+                    <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </TextField>
+                <Label layoutX="37.0" layoutY="223.0" opacity="0.97" prefHeight="22.0" prefWidth="112.0" text="New Due Date">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="due_date" layoutX="189.0" layoutY="221.0" style="-fx-background-color: #DAF7A6;">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </DatePicker>
+                <Label layoutX="37.0" layoutY="267.0" opacity="0.97" prefHeight="22.0" prefWidth="88.0" text="New Priority">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="priority" layoutX="190.0" layoutY="265.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #DAF7A6;">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </ChoiceBox>
+                <Label layoutX="35.0" layoutY="306.0" opacity="0.97" prefHeight="22.0" prefWidth="140.0" text="New time allocated">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="351.0" onAction="#UpdateTaskButton" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #76D7C4; -fx-cursor: hand;" text="Update Task" textAlignment="CENTER" textFill="#110101">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Button>
+                <Text fx:id="InfoAddTask" fill="#ff0404" layoutX="65.0" layoutY="410.0" wrappingWidth="465.255859375" />
+                <TextField fx:id="time_spent" layoutX="189.0" layoutY="306.0" prefHeight="22.0" prefWidth="267.0" promptText="Write how much time would you like to spend..." style="-fx-background-color: #DAF7A6;">
+                    <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </TextField>
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="316.0" layoutY="445.0" onAction="#ViewTasksButton" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #76D7C4; -fx-cursor: hand;" text="View Tasks" textAlignment="CENTER" textFill="#110101">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Button>
+                <Label layoutX="114.0" layoutY="446.0" opacity="0.97" prefHeight="22.0" prefWidth="209.0" text="View all of your tasks here:" textFill="#306142">
+                    <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="oldTitle" layoutX="189.0" layoutY="92.0" prefHeight="22.0" prefWidth="267.0" promptText="Old task name" style="-fx-background-color: #76D7C4;">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextField>
+            <Label layoutX="57.0" layoutY="63.0" opacity="0.97" prefHeight="22.0" prefWidth="323.0" text="Write the name of the task you want to change:">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>

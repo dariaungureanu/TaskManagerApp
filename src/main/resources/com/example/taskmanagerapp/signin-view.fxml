@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="325.0" prefWidth="505.0" style="-fx-background-color: #D1F2EB;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanagerapp.controllers.SignUpController">
+   <children>
+      <AnchorPane prefHeight="325.0" prefWidth="163.0" style="-fx-background-color: #A3E4D7;">
+         <children>
+            <ImageView fitHeight="151.0" fitWidth="160.0" layoutX="11.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Glow />
+               </effect>
+               <image>
+                  <Image url="@../../../../java/com/example/taskmanagerapp/images/taskmanager.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="21.0" layoutY="49.0" prefHeight="65.0" prefWidth="151.0" text="Task ">
+               <font>
+                  <Font name="Berlin Sans FB" size="36.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="21.0" layoutY="94.0" prefHeight="58.0" prefWidth="128.0" text="Master">
+               <font>
+                  <Font name="Berlin Sans FB" size="36.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="325.0" prefWidth="339.0">
+         <children>
+            <Label layoutX="31.0" layoutY="112.0" prefHeight="18.0" prefWidth="223.0" text="USERNAME:">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="142.0" layoutY="111.0" onAction="#username" prefHeight="24.0" prefWidth="172.0" promptText="username..">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="31.0" layoutY="161.0" prefHeight="18.0" prefWidth="223.0" text="PASSWORD:">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="142.0" layoutY="159.0" onAction="#password" prefHeight="24.0" prefWidth="172.0" promptText="password..">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+            </PasswordField>
+            <Label alignment="CENTER" layoutX="59.0" layoutY="22.0" opacity="0.75" prefHeight="18.0" prefWidth="223.0" text="Welcome to TaskMaster!">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="282.0" prefHeight="18.0" prefWidth="114.0" text="Already a user?">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="178.0" layoutY="278.0" mnemonicParsing="false" onAction="#LogInButton" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log In!" textFill="#fc2222" underline="true" />
+            <ImageView fitHeight="113.0" fitWidth="44.0" layoutX="148.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Glow />
+               </effect>
+               <image>
+                  <Image url="@../../../../java/com/example/taskmanagerapp/images/lock_logo.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="signUpInfo" fill="#ff0404" layoutX="33.0" layoutY="266.0" wrappingWidth="273.255859375" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="216.0" onAction="#SignUpButtonClick" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #76D7C4; -fx-cursor: hand;" text="SIGN UP" textAlignment="CENTER" textFill="#110101">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
