@@ -27,7 +27,7 @@
                   <Glow />
                </effect>
                <image>
-                  <Image url="@../../../../java/com/example/taskmanagerapp/images/taskmanager.png" />
+                  <Image url="file:/C:/Users/daria/OneDrive/Desktop/TaskManager/TaskManagerApp/src/main/java/com/example/taskmanagerapp/images/taskmanager.png" />
                </image>
             </ImageView>
             <Label layoutX="7.0" layoutY="165.0" opacity="0.7" prefHeight="38.0" prefWidth="247.0" text="Want to update the progress of your task?">

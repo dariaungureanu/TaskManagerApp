@@ -7,6 +7,7 @@ import com.example.taskmanagerapp.utils.enums.SCENE_IDENTIFIER;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,7 +63,7 @@ public class ViewTasksController extends SceneController {
         timeSpentColumn.setCellValueFactory(new PropertyValueFactory<>("timeSpent"));
         tagColumn.setCellValueFactory(new PropertyValueFactory<>("tagName"));
         commentColumn.setCellValueFactory(new PropertyValueFactory<>("commentText"));
-        //usernameField.textProperty().addListener(new ChangeListener<String>() {
+
         LoadTasksButton.setOnAction(event -> {
             try {
                 loadTasks();
