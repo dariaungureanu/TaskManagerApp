@@ -24,7 +24,8 @@ import java.util.ResourceBundle;
 
 public class ViewTasksController extends SceneController {
 
-
+    @FXML
+    private TextField TaskNameDelete;
     @FXML
     private Button LoadTasksButton;
     @FXML
@@ -99,7 +100,18 @@ public class ViewTasksController extends SceneController {
         }
 
     }
-
+    @FXML
+    void DeleteTaskButton(ActionEvent event) {
+        String taskName=TaskNameDelete.getText();
+        try{
+            DatabaseConnection db = new DatabaseConnection();
+            int taskId = db.getTaskIdFromTaskName(taskName); // Add a method to get the task ID
+            db.deleteTask(taskId);
+            loadTasks();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     @FXML
     void AddTagButton(ActionEvent event) {
         this.changeDimensions(470, 440);

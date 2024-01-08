@@ -57,6 +57,12 @@ public class UpdateTasksController extends SceneController implements Initializa
 
             db.updateTask(updatedTitle, updatedDescription, updatedDueDate, updatedTimeSpent, updatedPriority, User.getInstance().getUserId(), oldTitle.getText());
             InfoAddTask.setText("Your task was updated successfully!");
+            oldTitle.setText("");
+            title.setText("");
+            description.setText("");
+            due_date.setValue(null);
+            time_spent.setText("");
+            priority.setValue(null);
         } else {
             InfoAddTask.setText("Please make sure you enter the old task's title ");
         }

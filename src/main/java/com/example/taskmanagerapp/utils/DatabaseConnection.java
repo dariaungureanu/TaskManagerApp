@@ -341,4 +341,36 @@ public class DatabaseConnection {
         return resultSet;
     }
 
+    public void deleteTask(int taskId) {
+        Connection conn = getConnection();
+        PreparedStatement statement=null;
+        try {
+            String deleteTaskTag = "DELETE FROM task_tags WHERE task_id = ?";
+            statement = conn.prepareStatement(deleteTaskTag);
+            statement.setInt(1, taskId);
+            statement.executeUpdate();
+            System.out.println("New comment inserted: ");
+
+            String deleteCommentsQuery = "DELETE FROM comments WHERE task_id = ?";
+            statement = conn.prepareStatement(deleteCommentsQuery);
+            statement.setInt(1, taskId);
+            statement.executeUpdate();
+
+            String deleteTaskQuery = "DELETE FROM tasks WHERE task_id = ?";
+            statement = conn.prepareStatement(deleteTaskQuery);
+            statement.setInt(1, taskId);
+            statement.executeUpdate();
+            System.out.println("Task and associated tags/comments deleted successfully");
+        } catch (Exception e){
+            System.out.println(e);
+        }finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
