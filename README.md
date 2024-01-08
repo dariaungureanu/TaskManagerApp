@@ -12,7 +12,7 @@ _**A JavaFX task manager application**_
 
 ## Introduction
 
-TaskManagerApp is a JavaFX application developed as a project for Object-Oriented Programming and Databases course.The application allows users to efficiently manage their tasks by providing features such as task creation, viewing, updating, tagging, and commenting. Users can sign up for an account, log in, and start organizing their tasks seamlessly
+TaskManagerApp is a JavaFX application developed as a project for Object-Oriented Programming and Databases course.The application allows users to efficiently manage their tasks by providing features such as task creation, viewing, updating, deleting, tagging, and commenting. Users can sign up for an account, log in, and start organizing their tasks seamlessly
 
 ## Features
 
@@ -22,6 +22,7 @@ TaskManagerApp is a JavaFX application developed as a project for Object-Oriente
   - **Create Tasks:** Users can create new tasks with detailed information, including name, description, due date, priority (low, medium, high), and time spent.
   - **View Tasks:** Users can view all their tasks and see relevant details.
   - **Update Tasks:** Users can edit and update existing tasks.
+  - **Delete Tasks:** Users can delete existing tasks.
   - **Tagging:** Tasks can be tagged with labels such as "done," "in progress," or "not done" to track their status.
   - **Comments:** Users can add comments to tasks to provide additional context or updates.
 
