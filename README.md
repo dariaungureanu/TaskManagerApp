@@ -30,7 +30,7 @@ TaskManagerApp is a JavaFX application developed as a project for Object-Oriente
   - During the signup process, users are prompted to choose a category (e.g., school, work, personal) and name their project. This helps in organizing tasks effectively.
  
 - **Admin Functionality:**
-  - An admin user has the capability to view all categories and projects selected. Note: This feature is under development.
+  - An admin user has the capability to view all categories and projects selected.
 
 ## Installation
 
@@ -78,6 +78,7 @@ Now, your TaskManagerApp should be up and running in IntelliJ IDEA. If you encou
 2. **Sign up or log in:**
 
    - Sign up with a unique username and password if you are a new user.
+   - Sign up as an admin using the username `admin` and the password `12345`.
    - Log in with your existing credentials if you already have an account.
 
 3. **Manage Tasks:**
