@@ -1,5 +1,6 @@
 package com.example.taskmanagerapp.controllers;
 
+import com.example.taskmanagerapp.User;
 import com.example.taskmanagerapp.utils.DatabaseConnection;
 import com.example.taskmanagerapp.utils.enums.SCENE_IDENTIFIER;
 import javafx.event.ActionEvent;
@@ -28,11 +29,16 @@ public class SignUpController extends SceneController {
     public void SignUpButtonClick(ActionEvent event) throws SQLException {
         DatabaseConnection db = new DatabaseConnection();
         if(username.getText()!="" && password.getText()!=""){
-            db.insertUser(username.getText(), password.getText());
-            if(username.getText()=="admin" && password.getText()=="12345"){
+            if("admin".equals(username.getText()) && "12345".equals(password.getText())){
                 this.changeScene(SCENE_IDENTIFIER.ADMIN);
             }else {
-                this.changeScene(SCENE_IDENTIFIER.LOGGEDIN);
+                if(!verifySignUp(username.getText(), password.getText()))
+                {
+                    db.insertUser(username.getText(), password.getText());
+                    this.changeScene(SCENE_IDENTIFIER.LOGIN);
+                }else{
+                    signUpInfo.setText("This username already exists! Use another unsername");
+                }
 
             }
         }else{
@@ -40,6 +46,11 @@ public class SignUpController extends SceneController {
         }
     }
 
+    private boolean verifySignUp(String name, String pass) throws SQLException {
+        DatabaseConnection db =new DatabaseConnection();
+        System.out.println("Entered verifyLogIn with username: " + name + " and password: " + pass);
+        return db.getUser(username.getText(), password.getText());
+    }
     public void username(ActionEvent actionEvent) {
     }
 

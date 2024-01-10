@@ -55,7 +55,6 @@ public class ViewTasksController extends SceneController {
     @FXML
     public void initialize() {
         System.out.println("ViewTasksController initialized");
-        // Set up the TableView columns
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
@@ -79,10 +78,8 @@ public class ViewTasksController extends SceneController {
         try {
             DatabaseConnection db = new DatabaseConnection();
             ResultSet resultSet = db.getTask();
-            // Clear existing items
             taskTableView.getItems().clear();
 
-            // Populate TableView with tasks
             while (resultSet.next()) {
                 Task task = new Task(
                         resultSet.getString("title"),
@@ -106,7 +103,7 @@ public class ViewTasksController extends SceneController {
         String taskName=TaskNameDelete.getText();
         try{
             DatabaseConnection db = new DatabaseConnection();
-            int taskId = db.getTaskIdFromTaskName(taskName); // Add a method to get the task ID
+            int taskId = db.getTaskIdFromTaskName(taskName);
             db.deleteTask(taskId);
             loadTasks();
         }catch(Exception e){

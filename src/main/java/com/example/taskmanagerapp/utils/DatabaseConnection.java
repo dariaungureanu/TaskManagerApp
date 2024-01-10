@@ -109,7 +109,6 @@ public class DatabaseConnection {
         PreparedStatement statement = null;
 
         try {
-                // Insert tag into tags table and retrieve the generated tag_id
                 String insertTagQuery = "INSERT INTO tags(tag_name) VALUES(?) RETURNING tag_id";
                 statement = conn.prepareStatement(insertTagQuery);
                 statement.setString(1, tag);
@@ -120,11 +119,9 @@ public class DatabaseConnection {
                     tagId = resultSet.getInt("tag_id");
                     System.out.println("New tag inserted with tag_id: " + tagId);
                 } else {
-                    // Handle the case where the generated key was not retrieved
                     throw new SQLException("Failed to retrieve generated tag_id");
                 }
 
-                // Insert into task_tags table using the retrieved tag_id
                 String insertTaskTagQuery = "INSERT INTO task_tags(task_id, tag_id) VALUES(?, ?)";
                 statement = conn.prepareStatement(insertTaskTagQuery);
                 statement.setInt(1, taskId);
@@ -152,8 +149,6 @@ public class DatabaseConnection {
 
         try {
             conn = getConnection();
-
-            // Assuming 'tasks' table has a 'title' column representing the task name
             String query = "SELECT task_id FROM tasks WHERE title = ?";
             statement = conn.prepareStatement(query);
             statement.setString(1, taskName);
@@ -163,11 +158,9 @@ public class DatabaseConnection {
             if (resultSet.next()) {
                 return resultSet.getInt("task_id");
             } else {
-                // Handle the case where the task name is not found
                 throw new SQLException("Task not found for the given name: " + taskName);
             }
         } finally {
-            // Close resources in a finally block
             if (resultSet != null) resultSet.close();
             if (statement != null) statement.close();
             if (conn != null) conn.close();
@@ -225,10 +218,9 @@ public class DatabaseConnection {
         PreparedStatement statement = null;
 
         try {
-            // Get the task ID for the old title
+
             int taskId = getTaskIdFromTaskName(oldTitle);
 
-            // Prepare the update statement
             StringBuilder updateTaskQuery = new StringBuilder("UPDATE tasks SET ");
             List<Object> parameters = new ArrayList<>();
 
@@ -257,10 +249,8 @@ public class DatabaseConnection {
                 parameters.add(time_spent);
             }
 
-            // Remove the trailing comma and space
             updateTaskQuery.setLength(updateTaskQuery.length() - 2);
 
-            // Append WHERE clause
             updateTaskQuery.append(" WHERE task_id=?");
             parameters.add(taskId);
 
@@ -272,7 +262,6 @@ public class DatabaseConnection {
                 statement.setObject(i + 1, parameters.get(i));
             }
 
-            // Execute the update
             statement.executeUpdate();
 
             System.out.println("Task updated successfully");
@@ -327,7 +316,6 @@ public class DatabaseConnection {
         ResultSet resultSet = null;
 
         try {
-            // Join the projects and categories tables on the respective columns
             String query = "SELECT p.project_name, c.category_name " +
                     "FROM projects p " +
                     "JOIN categories c ON p.project_id = c.category_id";

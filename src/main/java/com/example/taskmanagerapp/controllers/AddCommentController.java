@@ -23,11 +23,11 @@ public class AddCommentController extends SceneController {
         if (commentField.getText()!="") {
             try {
                 DatabaseConnection db = new DatabaseConnection();
-                int taskId = db.getTaskIdFromTaskName(taskNameField.getText()); // Add a method to get the task ID
+                int taskId = db.getTaskIdFromTaskName(taskNameField.getText());
                 db.insertComment(commentField.getText(), taskId);
                 InfoAddTask.setText("Your comment was added successfully!");
             } catch (Exception e) {
-                e.printStackTrace(); // Log or handle the exception appropriately
+                e.printStackTrace();
                 InfoAddTask.setText("Error adding comment to the task!");
             }
         } else {

@@ -31,7 +31,7 @@ public class AdminViewController extends  SceneController {
 
     public void initialize() {
         System.out.println("ViewTasksController initialized");
-        // Set up the TableView columns
+
         projectColumn.setCellValueFactory(new PropertyValueFactory<>("project"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         LoadDataButton.setOnAction(event -> {

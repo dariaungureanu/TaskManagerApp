@@ -15,7 +15,6 @@ public class CreateFirstProjectController extends SceneController{
     void NextButtonClick(ActionEvent event) {
         String project = ProjectName.getText();
 
-        // Check if a category is selected before inserting into the database
         if (project != "") {
             DatabaseConnection db = new DatabaseConnection();
             db.insertProject(project);
@@ -25,7 +24,6 @@ public class CreateFirstProjectController extends SceneController{
             this.changeScene(SCENE_IDENTIFIER.CREATE_TASKS);
         } else {
             System.out.println("Please select a category before proceeding.");
-            // Handle the case where no category is selected, show an alert, etc.
         }
     }
 

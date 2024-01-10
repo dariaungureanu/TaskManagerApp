@@ -32,12 +32,12 @@ public class AddTagController extends SceneController implements Initializable {
         if (ChooseTag.getValue() != null) {
             try {
                 DatabaseConnection db = new DatabaseConnection();
-                int taskId = db.getTaskIdFromTaskName(taskNameField.getText()); // Add a method to get the task ID
+                int taskId = db.getTaskIdFromTaskName(taskNameField.getText());
                 db.insertTag(ChooseTag.getValue(), taskId);
                 InfoAddTask.setText("Your tag was added successfully!");
                 taskNameField.setText("");
             } catch (Exception e) {
-                e.printStackTrace(); // Log or handle the exception appropriately
+                e.printStackTrace();
                 InfoAddTask.setText("Error adding tag to the task!");
             }
         } else {

@@ -30,10 +30,11 @@ public class LogInController extends SceneController {
     @FXML
     void LogInButtonClick(ActionEvent event) throws SQLException{
         if(usernameField.getText()!="" && passwordField.getText()!=""){
+            //DatabaseConnection db = new DatabaseConnection();
             if(verifyLogIn(usernameField.getText(), passwordField.getText())){
                 User.getInstance().setUsername(usernameField.getText());
                 this.changeDimensions(550, 480);
-                this.changeScene(SCENE_IDENTIFIER.CREATE_TASKS);
+                this.changeScene(SCENE_IDENTIFIER.LOGGEDIN);
             }else{
                 logInInfo.setText("Invalid username or password");
             }

@@ -48,7 +48,7 @@ public class UpdateTasksController extends SceneController implements Initializa
     void UpdateTaskButton(ActionEvent event)throws SQLException {
         DatabaseConnection db=new DatabaseConnection();
         if (oldTitle.getText() != "") {
-            // Check for null values
+
             String updatedTitle = (title.getText() != null && !title.getText().isEmpty()) ? title.getText() : null;
             String updatedDescription = (description.getText() != null) ? description.getText() : null;
             LocalDate updatedDueDate = due_date.getValue();

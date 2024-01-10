@@ -51,7 +51,6 @@ public class ViewRemainTasksController extends SceneController {
 
     @FXML
     public void initialize() {
-        // Set up the TableView columns
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
@@ -74,10 +73,8 @@ public class ViewRemainTasksController extends SceneController {
         try {
             DatabaseConnection db = new DatabaseConnection();
             ResultSet resultSet = db.getRemainTask();
-            // Clear existing items
             taskTableView.getItems().clear();
 
-            // Populate TableView with tasks
             while (resultSet.next()) {
                 Task task = new Task(
                         resultSet.getString("title"),

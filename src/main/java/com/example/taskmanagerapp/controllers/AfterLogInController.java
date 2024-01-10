@@ -35,5 +35,9 @@ public class AfterLogInController extends SceneController implements Initializab
             System.out.println("Please select a category before proceeding.");
         }
     }
+    @FXML
+    void SkipButtonClick(ActionEvent event) {
+        this.changeScene(SCENE_IDENTIFIER.CREATE_TASKS);
+    }
 
 }
